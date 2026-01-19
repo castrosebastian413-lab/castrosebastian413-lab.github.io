@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Arte del Saber</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial;background:#eef6ff}
+header{background:linear-gradient(135deg,#00c6ff,#0072ff);color:white;text-align:center;padding:60px 20px}
+.boton{display:inline-block;margin:8px;padding:14px 28px;background:#ffd500;color:black;border-radius:25px;text-decoration:none;font-weight:bold;cursor:pointer}
+section{max-width:1100px;margin:auto;padding:40px 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:white;border-radius:15px;padding:20px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,.1)}
+.quiz{background:white;border-radius:15px;padding:20px;margin-top:20px}
+iframe{width:100%;height:315px;border-radius:12px;margin-top:15px}
+.correcto{color:green;font-weight:bold}
+.incorrecto{color:red;font-weight:bold}
+footer{background:#0072ff;color:white;text-align:center;padding:15px}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<header id="inicio">
+<h1>Bienvenidos, aprendamos juntos</h1>
+<h2>El Arte del Saber</h2>
+<a href="#materias" class="boton">Empecemos</a>
+</header>
+
+<!-- MATERIAS -->
+<section id="materias">
+<h2>Materias</h2>
+<div class="cards">
+  <div class="card"><a href="#lengua" class="boton">📘 Lengua</a></div>
+  <div class="card"><a href="#sociales" class="boton">🌍 Sociales</a></div>
+  <div class="card"><a href="#naturales" class="boton">🔬 Naturales</a></div>
+</div>
+</section>
+
+<!-- ================= LENGUA ================= -->
+
+<section id="lengua">
+<h2>📘 Lengua y Literatura – Sexto Grado</h2>
+
+<a href="#lengua-videos" class="boton">🎥 Videos</a>
+<a href="#lengua-quiz" class="boton">📝 Quiezz</a>
+
+<div id="lengua-videos">
+<iframe src="https://www.youtube.com/embed/QXCiv59I4Wc"></iframe>
+</div>
+
+<div id="lengua-quiz" class="quiz">
+<p>1. ¿Qué es una oración?</p>
+<button onclick="responder(this,true)">Conjunto de palabras con sentido</button>
+<button onclick="responder(this,false)">Una letra</button>
+<button onclick="responder(this,false)">Un dibujo</button>
+<p class="resultado"></p>
+
+<p>2. ¿Cuál es un sustantivo?</p>
+<button onclick="responder(this,false)">Correr</button>
+<button onclick="responder(this,true)">Casa</button>
+<button onclick="responder(this,false)">Bonito</button>
+<p class="resultado"></p>
+</div>
+
+<a href="#materias" class="boton">⬅ Volver</a>
+</section>
+
+<!-- ================= SOCIALES ================= -->
+
+<section id="sociales">
+<h2>🌍 Ciencias Sociales – Sexto Grado</h2>
+
+<a href="#sociales-videos" class="boton">🎥 Videos</a>
+<a href="#sociales-quiz" class="boton">📝 Quiezz</a>
+
+<div id="sociales-videos">
+<iframe src="https://www.youtube.com/embed/DifZJaYVUA4"></iframe>
+</div>
+
+<div id="sociales-quiz" class="quiz">
+<p>1. ¿Qué es un mapa?</p>
+<button onclick="responder(this,true)">Representación de la Tierra</button>
+<button onclick="responder(this,false)">Un texto</button>
+<button onclick="responder(this,false)">Un cuento</button>
+<p class="resultado"></p>
+
+<p>2. ¿Qué estudia la historia?</p>
+<button onclick="responder(this,false)">Los números</button>
+<button onclick="responder(this,true)">Los hechos del pasado</button>
+<button onclick="responder(this,false)">El clima</button>
+<p class="resultado"></p>
+</div>
+
+<a href="#materias" class="boton">⬅ Volver</a>
+</section>
+
+<!-- ================= NATURALES ================= -->
+
+<section id="naturales">
+<h2>🔬 Ciencias Naturales – Sexto Grado</h2>
+
+<a href="#naturales-videos" class="boton">🎥 Videos</a>
+<a href="#naturales-quiz" class="boton">📝 Quiezz</a>
+
+<div id="naturales-videos">
+<iframe src="https://www.youtube.com/embed/nGMOL4gymWM"></iframe>
+</div>
+
+<div id="naturales-quiz" class="quiz">
+<p>1. ¿Qué son los recursos naturales?</p>
+<button onclick="responder(this,false)">Objetos creados</button>
+<button onclick="responder(this,true)">Elementos de la naturaleza</button>
+<button onclick="responder(this,false)">Máquinas</button>
+<p class="resultado"></p>
+</div>
+
+<a href="#materias" class="boton">⬅ Volver</a>
+</section>
+
+<footer>
+© 2026 – El Arte del Saber
+</footer>
+
+<script>
+function responder(btn, correcta){
+  const resultado = btn.parentElement.querySelector(".resultado");
+  if(correcta){
+    resultado.textContent = "✔ Correcto";
+    resultado.className = "resultado correcto";
+  } else {
+    resultado.textContent = "✖ Incorrecto";
+    resultado.className = "resultado incorrecto";
+  }
+}
+</script>
+
+</body>
+</html>
